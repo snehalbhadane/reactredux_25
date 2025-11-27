@@ -1,30 +1,17 @@
-
+import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
-import {BrowserRouter,Routes,Route} from "react-router-dom";
-import Dashboard from './components/Dashboard';
-import Footer from './components/Footer';
-import Competency from './components/Competency';
-const App=()=> {//component created by default by using JS5 and JSX-Javascript XML//ES^ style for writing comp
+import Themecomponent from './components/Themecomponent';
+import { ThemeProvider } from './components/Themecontext';
+
+function App() {
   return (
-    <BrowserRouter>
-    <div className="d-flex flex-column min-vh-100">
-  <Header/>
-  <div className="flex-grow-1">
-   <Routes>
-   <Route path="/dashboard" element={<Dashboard/>}/>
-   <Route path="/competency" element={<Competency/>}/>
-    </Routes>
- </div>
-  <Footer/>
- </div>
-       
-    </BrowserRouter>
- 
-    
-  
+    <div>
+      <h1 class="text-3xl font-bold underline">Welcome to testing</h1>
+      <ThemeProvider>
+        <Themecomponent/>
+      </ThemeProvider>
+    </div>
   );
 }
 
 export default App;
- 
