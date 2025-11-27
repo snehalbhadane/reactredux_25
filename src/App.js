@@ -1,15 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Themecomponent from './components/Themecomponent';
-import { ThemeProvider } from './components/Themecontext';
 
-function App() {
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RootLayout from './component/layout/RootLayout';
+import Home from './component/home/Home';
+const App=()=> {
   return (
-    <div>
-      <h1 class="text-3xl font-bold underline">Welcome to testing</h1>
-      <ThemeProvider>
-        <Themecomponent/>
-      </ThemeProvider>
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<RootLayout/>}>
+          <Route  index element={<Home/>}/>
+          </Route>
+        </Routes>
+        </Router>
     </div>
   );
 }
